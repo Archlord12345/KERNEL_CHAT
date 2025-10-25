@@ -1,4 +1,5 @@
 {% extends "chatbox_app/base.html" %}
+{% load static %}
 
 {% block title %}Session {{ session.pk }} - Chatbox IA{% endblock %}
 
@@ -145,7 +146,7 @@
                 </div>
                 <div class="timeline">
                     {% for video in videos %}
-                        <div class="timeline-item">
+                        <div class="timeline-item" data-video-pending="{% if video.status != 'completed' and video.status != 'failed' %}true{% else %}false{% endif %}" data-video-id="{{ video.pk }}">
                             <div class="timeline-icon status-{{ video.status }}">
                                 <i class="fa-solid fa-circle"></i>
                             </div>
@@ -194,4 +195,5 @@ function pollVideoStatus(videoId) {
         .catch(error => console.error("Erreur de polling", error));
 }
 </script>
+<script src="{% static 'chatbox_app/polling.js' %}"></script>
 {% endblock %}

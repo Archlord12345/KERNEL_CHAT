@@ -19,9 +19,17 @@
 }
 
 .glass-navbar {
+    -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     background: rgba(15, 23, 42, 0.75);
     border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(15, 23, 42, 0.35));
 }
 
 .glass-card {
@@ -148,6 +156,7 @@
     position: relative;
     padding: 1.25rem;
     border-radius: 1.2rem;
+    -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(148, 163, 184, 0.22);
     background: rgba(15, 23, 42, 0.65);
@@ -214,6 +223,27 @@
 }
 
 .form-control-modern::placeholder {
+    color: rgba(226, 232, 240, 0.75);
+}
+
+.form-control,
+.form-select {
+    color: #ffffff;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 0.9rem;
+    padding: 0.85rem 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    color: #ffffff;
+    border-color: rgba(96, 165, 250, 0.6);
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.15);
+    background: rgba(15, 23, 42, 0.75);
+}
+
+.form-control::placeholder {
     color: rgba(226, 232, 240, 0.75);
 }
 
@@ -370,6 +400,7 @@
     padding: 2rem 0;
     border-top: 1px solid rgba(148, 163, 184, 0.2);
     background: rgba(15, 23, 42, 0.6);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
 }
 
